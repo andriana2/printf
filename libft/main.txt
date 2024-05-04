@@ -1,0 +1,1211 @@
+
+//****************** FT_ATOI.C  ***************//
+
+// int main(void)
+// {
+//     printf("%d\n",ft_atoi("546:5"));
+//     printf("%d\n",ft_atoi("-47-5"));
+// 	printf("%d %d %d %d %d\n", '\e','\n','\r','\v','\f');
+// 	printf("%d\n",ft_atoi("-2147483648"));
+// 	printf("%d\n",ft_atoi("\n\n\n  -46\b9 \n5d6"));
+// 	printf("       %d\n",ft_atoi("\e475"));
+// 	printf("      oo %d\n",atoi("\e475"));
+// 	printf("a)%d\n",ft_atoi("-\t\v\f\r\n \f1234"));
+// 	printf("b)%d\n",atoi("-\t\v\f\r\n \f1234"));
+// 	printf("b)%d\n",atoi("+\t\v\f\r\n \f123 4"));
+// 	printf("b)%d\n",ft_atoi("+\t\v\f\r\n \f123 4"));
+// }
+
+
+
+//****************** FT_BZERO.C  ***************//
+
+/*
+int main() {
+	char arr[6];
+	size_t num_bytes = sizeof(arr);
+	char arr2[6];
+	size_t num_bytes2 = sizeof(arr2);
+		
+	// Llenar el arreglo con ceros usando memset
+	memset(arr, 0, num_bytes);
+	ft_bzero(arr2, num_bytes2);
+
+		
+	// Imprimir el contenido del arreglo
+	for (int i = 0; i < 6; i++) {
+		printf("\nrl %c ", arr[i]);
+		printf("\ncp %c ", arr2[i]);
+		
+	}
+	return 0;
+}*/
+
+
+
+//****************** FT_CALLOC.C  ***************//
+/*
+int main() {
+    size_t num_elements = 5;
+    size_t element_size = sizeof(char);
+
+    // Allocate memory for an array of 5 integers
+    char* my_array = (char*)ft_calloc(num_elements, element_size);
+
+    if (my_array == NULL) {
+        // Allocation failed
+        fprintf(stderr, "Memory allocation failed\n");
+        return 1;
+    }
+    for (int i= 0; i< num_elements; i++){
+        my_array[i] = 'a' + i;
+        printf("%c  ", my_array[i]);
+    }
+
+    // Access and manipulate the elements of the array as needed
+
+    // Free the allocated memory when done using it
+    free(my_array);
+
+    return 0;
+}
+*/
+
+
+//****************** FT_ISALNUM.C  ***************//
+/*
+int main() {
+    char cadena[] = "hola 123 ;;//\n";
+    int i;
+
+	//printf("hola mundo");
+    for(i = 0; i < 11; i++) {
+        printf("original %c, %d\n", cadena[i], isalnum(cadena[i]));
+        printf("other     %c, %d\n", cadena[i], ft_isalnum(cadena[i]));
+    }
+
+    return 0;
+}*/
+
+//****************** FT_ISALPHA.C  ***************//
+/*
+int main()
+{
+	char cad[] = ";0sR(h&R1/";
+	int i;
+	
+	for(i = 0; cad[i]; i++)
+	{
+	printf(" la original %c %d\n", cad[i], isalpha(cad[i]));
+	printf(" la otra	  %c %d\n", cad[i], ft_isalpha(cad[i]));
+	} 
+
+	return 0;
+}*/
+
+//****************** FT_ISASCII.C  ***************//
+/*
+int main()
+{
+	char cadena[] = ";0ñsáR(h&~?RÛ1/";
+	int i;
+   
+	for(i = 0; cadena[i]; i++) 
+	{
+		printf("original %c %d\n", cadena[i], isascii(cadena[i]));
+		printf("otro     %c %d\n", cadena[i], ft_isascii(cadena[i]));
+
+	}
+   return 0;
+}*/
+
+
+//****************** FT_ISDIGIT.C  ***************//
+/*
+int main()
+{
+   char cadena[] = ";0ñfáR(4h&~?RÛ1/";
+   int i;
+   
+   for(i = 0; cadena[i]; i++) 
+    {  
+		printf("original %c, %d\n", cadena[i], isdigit(cadena[i]));
+		printf("otro     %c, %d\n", cadena[i], ft_isdigit(cadena[i]));
+	}
+   return 0;
+}*/
+
+
+//****************** FT_ISPRINT.C  ***************//
+/*
+int main()
+{
+	char cadena[] = "\t\n !#$&()*+,-./0123456789:;<=>?@ABZ[]^_`az{|}~";
+	
+	int i;
+	
+	for(i = 0; cadena[i]; i++) 
+	{	
+		printf("original %c<%d>\n", cadena[i], isprint(cadena[i]));
+		printf("otro     %c %d\n", cadena[i], ft_isprint(cadena[i]));
+	}
+	return 0;
+}
+int main ()
+{
+	int i = 123;
+    while (i <= 127)
+    {
+        printf(" other  %d  %d\n",(ft_isprint(i)), i);
+        printf(" origin %d  %d\n\n",(isprint(i)), i);
+        i++;
+    }
+}*/
+
+//****************** FT_ITOA.C  ***************//
+/*
+int main()
+{
+	int number = -2147483648;
+	//int number = -223342343;
+    
+	char *buffer;
+	buffer = ft_itoa(number);
+    printf("El número en formato string es: %s\n", buffer);
+	free (buffer);
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTADD_BACK.C  ***************//
+/*int main() {
+    // Creamos algunos nodos de muestra
+    t_list *node1 = malloc(sizeof(t_list));
+    node1->content = "hola1";
+    node1->next = NULL;
+
+    t_list *node2 = malloc(sizeof(t_list));
+    node2->content = "hola12";
+    node2->next = NULL;
+
+    t_list *node3 = malloc(sizeof(t_list));
+    node3->content = "hola13";
+    node3->next = NULL;
+
+    // Creamos una lista vacía
+    t_list *lista = NULL;
+
+    // Añadimos los nodos a la lista
+    ft_lstadd_back(&lista, node1);
+    ft_lstadd_back(&lista, node2);
+    ft_lstadd_back(&lista, node3);
+
+    // Imprimimos los elementos de la lista
+    printf("Elementos de la lista:\n");
+    t_list *temp = lista;
+    while (temp != NULL) {
+        printf("%s\n", (char *) temp->content);
+        temp = temp->next;
+    }
+
+    // Liberamos la memoria de los nodos
+    free(node1);
+    free(node2);
+    free(node3);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTADD_FRONT.C  ***************//
+/*int main() {
+    // Creamos algunos nodos de muestra
+    t_list *node1 = malloc(sizeof(t_list));
+    node1->content = "Hola";
+    node1->next = NULL;
+
+    t_list *node2 = malloc(sizeof(t_list));
+    node2->content = "Mundo";
+    node2->next = NULL;
+
+    // Creamos una lista vacía
+    t_list *lista = NULL;
+
+    // Añadimos los nodos a la lista usando ft_lstadd_front
+    ft_lstadd_front(&lista, node2); // Añadimos node2 al frente de la lista
+    ft_lstadd_front(&lista, node1); // Añadimos node1 al frente de la lista
+
+    // Imprimimos los elementos de la lista
+    printf("Elementos de la lista:\n");
+    t_list *temp = lista;
+    while (temp != NULL) {
+        printf("%s\n", (char*)temp->content);
+		 // Convertimos el contenido a char* antes de imprimirlo
+        temp = temp->next;
+    }
+
+    // Liberamos la memoria de los nodos
+    free(node1);
+    free(node2);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTCLEAR.C  ***************//
+/*void free_int(void *ptr) {
+    free(ptr);
+	printf("funcion free %d\n", *(int*)(ptr));
+}
+
+int main() {
+    // Crear una lista enlazada de enteros
+    t_list *head = malloc(sizeof(t_list));
+    head->content = malloc(sizeof(int));
+    *(int *)(head->content) = 1;
+    head->next = malloc(sizeof(t_list));
+    head->next->content = malloc(sizeof(int));
+    *(int *)(head->next->content) = 2;
+    head->next->next = NULL;
+
+    // Llamar a ft_lstclear para limpiar la lista
+    printf("Lista antes de limpiar:\n");
+    t_list *current = head;
+    while (current) {
+        printf("%d\n", *(int *)(current->content));
+        current = current->next;
+    }
+    
+    ft_lstclear(&head, &free_int);
+
+    printf("Lista después de limpiar:\n");
+    current = head;
+    while (current) {
+        printf("%d\n", *(int *)(current->content));
+        current = current->next;
+    }
+
+    return 0;
+}*/
+
+
+//****************** FT_LSTDELONE.C  ***************//
+/*void free_int(void *ptr) {
+    free(ptr);
+}
+
+int main() {
+    // Creamos un nodo de ejemplo con un entero
+    int *data = (int *)malloc(sizeof(int));
+    *data = 42;
+    t_list *node = (t_list *)malloc(sizeof(t_list));
+    node->content = data;
+    node->next = NULL;
+
+    // Llamamos a ft_lstdelone para eliminar el nodo
+    printf("Antes de eliminar el nodo: %d\n", *(int *)(node->content));
+    ft_lstdelone(node, &free_int);
+    printf("Después de eliminar el nodo %d\n", *(int *)(node->content));
+
+    return 0;
+}*/
+
+
+//****************** FT_LSTTITER.C  ***************//
+/*void print_int(void *ptr) {
+    printf("%d\n", *(int *)ptr);
+}
+
+// Función para imprimir una cadena
+void print_string(void *ptr) {
+    printf("%s\n", (char *)ptr);
+}
+
+int main() {
+    // Crear una lista enlazada de enteros
+    t_list *head_int = malloc(sizeof(t_list));
+    int *data1 = malloc(sizeof(int));
+    *data1 = 1;
+    head_int->content = data1;
+
+    t_list *node_int = malloc(sizeof(t_list));
+    int *data2 = malloc(sizeof(int));
+    *data2 = 2;
+    node_int->content = data2;
+
+    head_int->next = node_int;
+    node_int->next = NULL;
+
+    // Llamar a ft_lstiter para imprimir los enteros
+    printf("Lista de enteros:\n");
+    ft_lstiter(head_int, &print_int);
+
+    // Crear una lista enlazada de cadenas
+    t_list *head_str = malloc(sizeof(t_list));
+    head_str->content = "Hello";
+
+    t_list *node_str = malloc(sizeof(t_list));
+    node_str->content = "World";
+
+    head_str->next = node_str;
+    node_str->next = NULL;
+
+    // Llamar a ft_lstiter para imprimir las cadenas
+    printf("Lista de cadenas:\n");
+    ft_lstiter(head_str, &print_string);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTLAST.C  ***************//
+
+/*int main() {
+    // Crear algunos nodos para una lista enlazada
+    t_list *node1 = ft_lstnew("Node 1");
+    t_list *node2 = ft_lstnew("Node 2");
+    t_list *node3 = ft_lstnew("Node 3");
+
+    // Establecer los punteros next para formar una lista enlazada
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = NULL;
+
+    // Obtener el último nodo de la lista
+    t_list *last_node = ft_lstlast(node1);
+
+    // Imprimir el contenido del último nodo, si existe
+    if (last_node != NULL) {
+        printf("El contenido del último nodo 
+		es: %s\n", (char *)last_node->content);
+    } else {
+        printf("La lista está vacía\n");
+    }
+
+    // Liberar la memoria de los nodos
+    //ft_lstclear(&node1, free);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTMAP.C  ***************//
+/*void *		lstmap_f(void *content) {
+	(void)content;
+	return ("OK !");
+}
+
+// Función para liberar el contenido de un nodo
+void lstdel_f(void *content) {
+    // Supongamos que no necesitamos hacer 
+	nada especial para liberar el contenido
+    free(content);
+}
+
+int main()
+{
+	t_list *l = ft_lstnew(strdup(" 1 2 3 "));
+	t_list *ret;
+
+	l->next = ft_lstnew(strdup("ss"));
+	l->next->next = ft_lstnew(strdup("-_-"));
+	ret = ft_lstmap(l, lstmap_f, lstdel_f);
+	if (!strcmp(ret->content, "OK !"))
+		printf("olee\n");
+	printf("%s\n", (char *)ret->content);
+	if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->
+	content, "OK !") && !strcmp(ret->next->next->content, "OK !")
+	 && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss")
+	  && !strcmp(l->next->next->content, "-_-"))
+		printf("bien");
+	else
+		printf("mal");
+}
+*/
+/*void *duplicate_int(void *ptr) {
+	int *new_int = malloc(sizeof(int));
+	if (!new_int) {
+		return NULL;
+	}
+	*new_int = *(int *)ptr;
+	return new_int;
+}
+
+//Función para duplicar una cadena
+void *duplicate_string(void *ptr) {
+	char *new_string = strdup((char *)ptr);
+	if (!new_string) {
+		return NULL;
+	}
+	return new_string;
+}
+
+int main() {
+	// Crear una lista enlazada de enteros
+	t_list *head_int = ft_lstnew((void *)&(int){1});
+	//t_list *head_int = NULL;
+	ft_lstadd_back(&head_int, ft_lstnew((void *)&(int){2}));
+	ft_lstadd_back(&head_int, ft_lstnew((void *)&(int){3}));
+
+	// Duplicar la lista de enteros
+	t_list *duplicated_int = ft_lstmap(head_int, &duplicate_int, &free);
+	if (!duplicated_int) {
+		printf("Error: Fallo al duplicar la lista de enteros.\n");
+        return 1;
+    }
+
+    // Imprimir la lista de enteros duplicada
+    printf("Lista de enteros duplicada:\n");
+    t_list *current_int = duplicated_int;
+    while (current_int) {
+        printf("%d\n", *(int *)(current_int->content));
+        current_int = current_int->next;
+    }
+
+    // Liberar la lista de enteros duplicada
+    ft_lstclear(&duplicated_int, &free);
+
+    // Crear una lista enlazada de cadenas
+    t_list *head_str = ft_lstnew("Hello");
+    ft_lstadd_back(&head_str, ft_lstnew("World"));
+    ft_lstadd_back(&head_str, ft_lstnew("from"));
+    ft_lstadd_back(&head_str, ft_lstnew("the"));
+    ft_lstadd_back(&head_str, ft_lstnew("other"));
+    ft_lstadd_back(&head_str, ft_lstnew("side"));
+
+    // Duplicar la lista de cadenas
+    t_list *duplicated_str = ft_lstmap(head_str, &duplicate_string, &free);
+    if (!duplicated_str) {
+        printf("Error: Fallo al duplicar la lista de cadenas.\n");
+        return 1;
+    }
+
+    // Imprimir la lista de cadenas duplicada
+    printf("\nLista de cadenas duplicada:\n");
+    t_list *current_str = duplicated_str;
+    while (current_str) {
+        printf("%s\n", (char *)(current_str->content));
+        current_str = current_str->next;
+    }
+
+    // Liberar la lista de cadenas duplicada
+    ft_lstclear(&duplicated_str, &free);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTNEW.C  ***************//
+
+/*int main() {
+    // Crear un nuevo nodo con contenido "Hello, world!"
+    t_list *node = ft_lstnew("Hello, world!");
+    
+    // Verificar si la creación del nodo fue exitosa
+    if (node != NULL) {
+        // Imprimir el contenido del nodo
+        printf("Contenido del nodo: %s\n", (char *)node->content);
+
+        // Liberar la memoria del nodo 
+        free(node);
+    } else {
+        printf("Error: No se pudo crear el nodo\n");
+    }
+
+    return 0;
+}*/
+
+
+
+//****************** FT_LSTSIZE.C  ***************//
+
+/*int main() {
+    // Crear algunos nodos para una lista enlazada
+    t_list *node1 = ft_lstnew("Node 1");
+    t_list *node2 = ft_lstnew("Hola");
+    t_list *node3 = ft_lstnew("Node 3");
+
+    // Establecer los punteros next para formar una lista enlazada
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = NULL;
+
+    // Calcular el tamaño de la lista
+    int size = ft_lstsize(node1);
+
+    // Imprimir el tamaño de la lista
+    printf("El tamaño de la lista es: %d\n", size);
+
+    // Liberar la memoria de los nodos
+    //ft_lstclear(&node1, free);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_MEMCHR.C  ***************//
+
+/*int main ()
+{
+	char s[] = {0, 1, 2 ,3 ,4 ,5};
+	ft_memchr(s, 0, 0);
+	printf("%d\n",s[1]);
+}
+
+
+*/
+
+/*
+int main() {
+    const char *cadena = "Hola, mundo!";
+    char car = 'o';
+
+    // Buscar 'm' en la cadena
+    //const char *resultado = (char *)ft_memchr(cadena, car, strlen(cadena));
+    const char *resultado = (char *)memchr(cadena, 1234, strlen(cadena));
+
+    if (resultado != NULL) {
+        printf("El caracter '%c' : %ld\n", car, resultado - cadena + 1);
+    } else {
+        printf("El caracter '%ld' no se encuentra en la cadena.\n", resultado);
+    }
+
+    return 0;
+}
+*/
+
+
+
+
+//****************** FT_MEMCMP.C  ***************//
+/*
+int main() {
+	int num2 = 4222;
+	int num1 = 42223;
+
+	int resultado = ft_memcmp(&num1, &num2, sizeof(int));
+
+	if (resultado == 0) {
+		printf("num1 es igual a num2.\n");
+	} else if (resultado < 0) {
+		printf("num1 es menor que num2.\n");
+	} else {
+		printf("num1 es mayor que num2.\n");
+	}
+
+	return 0;
+}*/
+
+
+
+//****************** FT_MEMCPY.C  ***************//
+/*
+int main() {
+    //char origen[] = "hola";
+    char destino[1];
+    //size_t tamaño = sizeof(origen);
+
+    // Copia los datos desde origen a destino
+    //ft_memcpy(destino, origen, tamaño);
+	ft_memcpy("            ", ((void *)0), 17);
+	
+    for (int i = 0; i < 10; i++) {
+       // printf("%c", destino[i]);
+    }
+
+    return 0;
+}
+*/
+
+
+//****************** FT_MEMMOVE.C  ***************//
+
+/*int main()
+{
+	ft_memmove(((void *)0), ((void *)0), 5);
+}
+
+int main()
+{
+    char cadena[50] = "Hello, World!";
+    char cadena2[50] = "buenos dias";
+
+    printf("Cadena original: %s\n", cadena);
+
+    // Copiar los últimos 5 caracteres al principio de la cadena
+    ft_memmove(cadena, cadena2, 10);
+
+    printf("Cadena modificada: %s\n", cadena);
+
+    return 0;
+}*/
+
+
+//****************** FT_MEMSET.C  ***************//
+/*int main() {
+	char arr[6];
+	size_t num_bytes = sizeof(arr);
+	char arr2[6];
+	size_t num_bytes2 = sizeof(arr2);
+		
+	// Llenar el arreglo con ceros usando memset
+	memset(arr, '?', num_bytes);
+	ft_memset(arr2, '?', num_bytes2);
+
+		
+	// Imprimir el contenido del arreglo
+	for (int i = 0; i < 6; i++) {
+		printf("\nrl %c ", arr[i]);
+		printf("\ncp %c ", arr2[i]);
+		
+	}
+	return 0;
+}*/
+
+
+//****************** FT_PUTCHAR_FD.C  ***************//
+
+
+/*
+int main()
+{
+	ft_putchar_fd('a', 1);
+	return (0);
+}*/
+
+
+//****************** FT_PUTENDL_FD.C  ***************//
+
+/*
+int main()
+{
+	ft_putendl_fd("hola buenos dias", 1);
+	return (0);
+}*/
+
+
+//****************** FT_PUTNBR_FD.C  ***************//
+/*int main()
+{
+	int i = (2147483647);
+	char buff[0xF0];
+	ft_putnbr_fd(i, 2);
+}*/
+
+//****************** FT_PUTSTR_FD.C  ***************//
+/*
+int main()
+{
+	ft_putstr_fd("hola buenos dias", 1);
+	return (0);
+}*/
+
+
+//****************** FT_SPLIT.C  ***************//
+/*int main() {
+    char input_text[] = "lorem ipsum dolor sit amet, consectetur ";
+    char delimiter = ' ';
+
+    char **result = ft_split(input_text, delimiter);
+    if (result != NULL) {
+        printf("\nPalabras resultantes:\n");
+        for (int i = 0; result[i]; i++) {
+            printf("<%s>\n", result[i]);
+            free(result[i]); // Liberar cada cadena individual
+        }
+		if (!result[0])
+			printf("->%s\n", result[0]);
+        free(result);
+    } else {
+        printf("Error en la reserva de memoria.\n");
+    }
+	// if (!(result = ft_split("", 'z')))
+    //     printf("NULL");
+    // else
+    //     if (!result[0])
+    //         printf("\nok\n");
+
+    return 0;
+}*/
+
+
+//****************** FT_STRCHR.C  ***************//
+
+/*int main()
+{
+        char *h = "teste";
+        printf("posicion %p\n", (void *)h);
+
+        char *p =ft_strchr(h, (int)'\0');
+        printf("%s y posicion %p\n", p, (void *)p);
+        printf("%s\n", strchr("teste", (int)'\0'));
+
+}*/
+/*
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+void    ft_print_result(char const *s)
+{
+        int             len;
+
+        len = 0;
+        while (s[len])
+                len++;
+        write(1, s, len);
+}
+
+int             main(int argc, const char *argv[])
+{
+        char            *str;
+        char            str2[] = "bonjour";
+        int                     arg;
+
+            if (!(str = ft_strchr(str2, '\0')))
+                        ft_print_result("NULL");
+                else
+                {
+                        ft_print_result(str);
+						printf("el resusltado es <%s>", str);
+                        if (str != str2 + 7)
+                                ft_print_result("\nReturn value is false");
+                }
+                char    str3[] = "";
+                if (!(str = ft_strchr(str3, '\0')))
+                        ft_print_result("NULL");
+                else
+                {
+                        ft_print_result(str);
+                        if (str != str3)
+                                ft_print_result("\nReturn value is false");
+                }
+        
+        return (0);
+}
+*/
+
+
+
+
+//****************** FT_STRDUP.C  ***************//
+
+/*
+int main() {
+	const char *original = "1231adfadfa";
+	char *copia = ft_strdup(original);
+
+	if (copia != NULL) {
+		printf("Original: %s\n", original);
+		printf("Copia: %s\n", copia);
+
+		
+		free(copia);
+	} else {
+		printf("Error in program.\n");
+	}
+
+	return 0;
+}
+*/
+
+
+//****************** FT_STRITERI.C  ***************//
+
+/*
+void my_iteration_function(unsigned int index, char *c) {
+    // Agregar 'A' al valor ASCII de cada carácter
+    printf("%c\n", *c);
+    *c -= 32;
+}
+
+int main() {
+    char input_str[] = "hello";
+
+    // Llamada a ft_striteri con la cadena y la función de iteración
+    ft_striteri(input_str, &my_iteration_function);
+
+    // Imprimir la cadena transformada
+    printf("Cadena transformada: %s\n", input_str);
+
+    return 0;
+}*/
+
+
+
+//****************** FT_STRJOIN.C  ***************//
+/*
+int main() {
+	
+	char *s1 = "wh";
+        char *s2 = "??";
+        char *s3 = "wh??";
+ 
+        char *res = ft_strjoin(s1, s2);
+        if (!strcmp(res, s3))
+		{
+			printf("%s %zu\n ",res, ft_strlen(res));
+			free(res);
+		}
+		else
+			printf("mal");
+
+ 
+    // const char* word = "HELLO";
+    // const char* word2 = " WORLD";
+    // const char* answer = ft_strjoin(word, word2);
+    
+    // printf("Answer: %s y %zu\n", answer, ft_strlen(answer));
+
+    // free((void*)answer);
+
+    return 0;
+}*/
+
+
+//****************** FT_STRLCAT.C  ***************//
+/*void	ft_print_result(int n)
+{
+	char c;
+
+	if (n >= 10)
+		ft_print_result(n / 10);
+	c = n % 10 + '0';
+	write (1, &c, 1);
+}
+
+int		main(int argc, const char *argv[])
+{
+	char	*dest;
+	int		arg;
+
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)) || argc == 1)
+		return (0);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+		dest[14] = 'a';
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	else if (arg == 5)
+	{
+		dest[10] = 'a';
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	else if (arg == 6)
+	{
+		dest[10] = 'a';
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	else if (arg == 7)
+	{
+		memset(dest, 'r', 15);
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	else if (arg == 8)
+	{
+		dest[10] = 'a';
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 6));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	else if (arg == 9)
+	{
+		memset(dest, 'r', 14);
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+		write(1, "\n", 1);
+		write(1, dest, 15);
+	}
+	return (0);
+}
+	*/
+
+/*
+int main() {
+	char dest[14] = "a";
+	char des[14] = "a";
+	size_t len = ft_strlcat(dest, "lorem ipsum dolor sit amet", 15);
+
+    write(1, "\n", 1);
+    write(1, "\n", 1);
+
+	printf("%s\n", dest);
+	printf("%zu\n", len);
+
+	//size_t le = strlcat(des, "lorem ipsum dolor sit amet", 14);
+    write(1, "\n", 1);
+    write(1, "\n", 1);
+
+	//printf("%s\n", des);
+	//printf("%zu\n", le);
+
+	return 0;
+}*/
+
+
+
+
+
+
+//****************** FT_STRLCPY.C  ***************//
+/*
+int main() {
+    char source[] = "Hello, world!";
+    char destination[9];
+	
+    size_t len = ft_strlcpy(destination, source, sizeof(destination));
+
+    printf("%s\n", destination);
+    printf("%zu\n", len);
+
+    return 0;
+}
+
+int main()
+{
+	char source[] = "lorem ipsum dolor sit amet";
+    char destination[9];
+	
+    size_t len = ft_strlcpy(destination, source, 0);
+
+    printf("%s\n", destination);
+    printf("%zu\n", len);
+
+}*/
+
+
+
+
+//****************** FT_STRLEN.C  ***************//
+/*
+#include <stdio.h>
+int main ()
+{
+    printf("vale %d", ft_strlen(""));
+}*/
+
+
+//****************** FT_STRMAPI.C  ***************//
+/*
+char my_mapping_function(unsigned int index, char c) {
+    // Simply convert to uppercase if it is a lowercase letter
+    if (c >= 'a' && c <= 'z') {
+        return c - ('a' - 'A');
+    }
+    return c;  // Return the same character if it's not a lowercase letter
+}
+
+int main() {
+    const char *input_str = "Hello, world!";
+    
+    // Call ft_strmapi with the string and the mapping function
+    char *result_str = ft_strmapi(input_str, &my_mapping_function);
+    
+    // Print the result
+    printf("Original string: %s\n", input_str);
+    printf("Transformed string: %s\n", result_str);
+    
+    // Free dynamically allocated memory
+    free(result_str);
+    
+    return 0;
+}*/
+
+
+//****************** FT_STRNCMP.C  ***************//
+/*int main() {
+    int resultado;
+
+    resultado = ft_strncmp("test\200", "test\0", 6);
+
+    if (resultado == 0) {
+        printf("str1 == str2\n");
+    } else if (resultado < 0) {
+        printf("str1 < str2.\n");
+    } else {
+        printf("str1 > str2\n");
+    }
+
+    return 0;
+}*/
+
+
+
+//****************** FT_STRNSTR.C  ***************//
+
+/*#include <string.h>
+int main() {
+    const char *big = "Esta es una cadena de ejemplo";
+    const char *little = "";
+
+    char *resultado = ft_strnstr(big, little, 30); 
+	// Buscar "cadena" en los primeros 30 caracteres de "big"
+
+
+    if (resultado != NULL) {
+        printf("La subcadena \"%s\" se encontró en la
+		 posición: %ld\n", little, resultado - big);
+    } else {
+        printf("La subcadena \"%s\" no se encontró en \"%s\"\n", little, big);
+    }
+
+    return 0;
+}
+*/
+/*int main()
+{
+	printf("copy %s\n", ft_strnstr("holamunndo", "holamundoquetal", 2));
+	printf("original %s\n", strnstr("holamunndo", "holamundoquetal", 2));
+}*/
+
+/*int main() {
+	char *s1 = "A";
+	char *s2 = "A";
+
+	size_t max = strlen(s1) + 1;
+	size_t min = strlen(s1) + 1;
+
+	char *i1 = strnstr(s1, s1, max);
+	char *i2 = ft_strnstr(s2, s2, min);
+
+	if (i1 == i2)
+		printf("todo bien");
+	else 
+		printf("todo mal");
+
+    return 0;
+}*/
+
+
+
+
+//****************** FT_STRRCHR.C  ***************//
+/*int main()
+{
+	char s[] = "tripouille";
+	printf("%s\n",ft_strrchr(s, 't' + 256));
+	printf("%c", ('t' + 256));
+}*/
+/*int main()
+{
+	char a[] = "bounjour";
+	printf("%s\n",ft_strrchr(a + 2, 'b'));
+	printf("%s\n",strrchr(a + 2, 'b'));
+
+}*/
+/*
+int main() {
+    char str[] = "hello como te va";
+    char *ptr = ft_strrchr(str, '\0');
+
+    if (ptr != NULL) {
+		printf("El resultado es %s\n", ptr);
+        printf(" %ld\n", ptr - str);
+    } else {
+        printf("There aren't anything e\n");
+    }
+
+    return 0;
+}*/
+
+
+
+
+
+//****************** FT_STRTRIM.C  ***************//
+/*int main()
+{
+	char *s1 = " lorem ipsum dolor sit amet";
+	char *ret = ft_strtrim(s1, "l t");
+	printf("%s\n", ret);
+}
+*/
+
+
+//****************** FT_SUBSTR.C  ***************//
+/*int main(void)
+{
+	char * s = ft_substr("tripouille", 0, 42000);
+	//printf("%zu %lu",strlen(s), strlen("tripouille") + 1);
+
+	char * str = strdup("1");
+	s = ft_substr(str, 42, 42000000);
+	printf("<%s> %lu",s, strlen("1"));
+
+	// mcheck(s, 1); free(s); free(str); showLeaks();
+	// return (0);
+}
+*/
+/*int main()
+{
+	char * s = ft_substr("hola", 2, -1);
+	printf("%s\n", s);
+	//mcheck(s, strlen("tripouille") + 1); 
+	//free(s);
+}
+*/
+/*int main() {
+    char *str = "01234";
+    size_t size = 10;
+    char *ret = ft_substr(str, 10, size);
+    printf(" -----> %s\n", str);
+    if (!strncmp(ret, "", 1))
+    {
+        free(ret);
+        printf("bien\n");
+    }
+    else
+    {
+        printf("mal\n");
+    }
+    return 0;
+}*/
+
+
+
+
+
+//****************** FT_TOLOWER.C  ***************//
+/*
+#include <ctype.h>
+
+int main() {
+    char letra = '&';
+    int minuscula = tolower(letra);
+
+    printf("Letra en minscula: %c\n", minuscula);
+    printf("Letra en minscula: %c\n", ft_tolower(letra));
+
+    return 0;
+}*/
+
+
+//****************** FT_TOUPPER.C  ***************//
+
+/*
+#include <ctype.h>
+int main() {
+    char letra = 'a';
+    int mayuscula = toupper(letra);
+
+    printf("Letra en mayscula: %c\n", mayuscula);
+    printf("Letra en mayscula: %c\n", ft_toupper('H'));
+
+    return 0;
+}
+
+*/
+
